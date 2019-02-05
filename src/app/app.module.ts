@@ -9,6 +9,11 @@ import { AppComponent } from './app.component';
 
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
+// Firebase Modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    BrowserModule, FormsModule 
+    BrowserModule, 
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), // Main Angular fire module 
+    AngularFireDatabaseModule,  // Firebase database module
+    AngularFireAuthModule, 
     ],
   providers: [],
   bootstrap: [AppComponent]
