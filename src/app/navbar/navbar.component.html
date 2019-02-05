@@ -14,11 +14,11 @@
     </mat-form-field>
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
-  <button mat-button  routerLink="login">Connection   <mat-icon>perm_identity</mat-icon></button>
-  <button mat-button [matMenuTriggerFor]="menu">Admin Account   <mat-icon>keyboard_arrow_down</mat-icon></button>
+  <button mat-button *ngIf= "!user" routerLink="login">Connection   <mat-icon>perm_identity</mat-icon></button>
+  <button mat-button *ngIf= "user" [matMenuTriggerFor]="menu">Admin Account   <mat-icon>keyboard_arrow_down</mat-icon></button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item  routerLink="admin/series">Manage Series</button>
     <button mat-menu-item  routerLink="admin/users">Manage Users</button>
-    <button mat-menu-item (click)="logout()">LogOut</button>
+    <button mat-menu-item *ngIf= "!user" (click)="logout()">LogOut</button>
   </mat-menu>
 </mat-toolbar>

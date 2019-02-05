@@ -1,8 +1,12 @@
 .form-field {
     width: 400px;
-    margin: 30px;
+    margin-left: 30px;   
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 .mat-button{
     margin-left: 5px;
 
 }
+

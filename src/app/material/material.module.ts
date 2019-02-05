@@ -10,7 +10,8 @@ import * as Material from '@angular/material';
     Material.MatMenuModule,
     Material.MatButtonModule,
     Material.MatInputModule,
-    Material.MatIconModule
+    Material.MatIconModule,
+    Material.MatFormFieldModule
 
   ],
   exports : [
@@ -18,8 +19,8 @@ import * as Material from '@angular/material';
     Material.MatMenuModule,
     Material.MatButtonModule,
     Material.MatInputModule,
-    Material.MatInputModule,
-    Material.MatIconModule
+    Material.MatIconModule,
+    Material.MatFormFieldModule
   ]
 })
 export class MaterialModule { }
