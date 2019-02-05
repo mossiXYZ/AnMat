@@ -20,6 +20,8 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ManageSeriesComponent } from './admin/manage-series/manage-series.component';
 import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
+import { AuthGuardService } from './shared/auth-guard.service';
+import { AuthService } from './shared/auth.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,10 @@ import { ManageUsersComponent } from './admin/manage-users/manage-users.componen
     AngularFireDatabaseModule,  // Firebase database module
     AngularFireAuthModule, 
     ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
