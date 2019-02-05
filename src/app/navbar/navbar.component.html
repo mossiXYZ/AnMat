@@ -1,7 +1,9 @@
 <mat-toolbar >
-  <span>POPEYE</span>
+  <button mat-button matSuffix mat-icon-button aria-label="Home" routerLink="/"> 
+     <mat-icon >home</mat-icon>
+  </button>
   <mat-form-field class="form-field">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="onAnalyse()">
           <mat-icon>search</mat-icon>
         </button>
       <input matInput type="text" placeholder="Write here a word to analyse" [(ngModel)]="value">
@@ -12,11 +14,11 @@
     </mat-form-field>
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
-  <button mat-button >Connection</button>
-  <button mat-button [matMenuTriggerFor]="menu">Admin Account</button>
+  <button mat-button  routerLink="login">Connection   <mat-icon>perm_identity</mat-icon></button>
+  <button mat-button [matMenuTriggerFor]="menu">Admin Account   <mat-icon>keyboard_arrow_down</mat-icon></button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Manage Series</button>
-    <button mat-menu-item>Manage Users</button>
-    <button mat-menu-item>LogOut</button>
+    <button mat-menu-item  routerLink="admin/series">Manage Series</button>
+    <button mat-menu-item  routerLink="admin/users">Manage Users</button>
+    <button mat-menu-item (click)="logout()">LogOut</button>
   </mat-menu>
 </mat-toolbar>
