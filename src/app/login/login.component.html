@@ -2,7 +2,7 @@
     <div class="list-viewer-wrapper">
       <div class="list-header-title">Login</div>
   
-      <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onLoginSubmit()" novalidate>
+      <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && loginGoogle()" novalidate>
         <div class="form-container">  
           <mat-form-field>
               <input id="email"
@@ -31,7 +31,7 @@
             </button>
             <button mat-button 
                     class="mat-raised-button mat-primary divider" 
-                    >Login with Google
+                    (click) = 'loginGoogle()'>Login with Google
             </button>
             <button mat-button  routerLink="/register" class="divider">Register</button>
         </div>
