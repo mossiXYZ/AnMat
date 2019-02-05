@@ -1,8 +1,22 @@
 <mat-toolbar >
   <span>POPEYE</span>
+  <mat-form-field class="form-field">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>search</mat-icon>
+        </button>
+      <input matInput type="text" placeholder="Write here a word to analyse" [(ngModel)]="value">
 
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
-
-  <span>Connexion</span>
+  <button mat-button >Connection</button>
+  <button mat-button [matMenuTriggerFor]="menu">Admin Account</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Manage Series</button>
+    <button mat-menu-item>Manage Users</button>
+    <button mat-menu-item>LogOut</button>
+  </mat-menu>
 </mat-toolbar>
