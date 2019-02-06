@@ -24,6 +24,7 @@ import { AuthGuardService } from './shared/auth-guard.service';
 import { AuthService } from './shared/auth.service';
 import { SerieFormComponent } from './admin/manage-series/serie-form/serie-form.component';
 import { SerieService } from './shared/serie.service';
+import { GenreService } from './shared/genre.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { SerieService } from './shared/serie.service';
   providers: [
     AuthGuardService,
     AuthService,
-    SerieService
+    SerieService,
+    GenreService
   ],
   bootstrap: [AppComponent]
 })

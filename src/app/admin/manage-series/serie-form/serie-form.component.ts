@@ -1,6 +1,8 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import { SerieService } from 'src/app/shared/serie.service';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import { GenreService } from 'src/app/shared/genre.service';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-serie-form',
@@ -10,13 +12,12 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 
 export class SerieFormComponent implements OnInit {
 
-  constructor(private serieService: SerieService) {   }
+  constructor(private serieService: SerieService,
+              private genreService: GenreService,
+              private notificationService : NotificationService,
+              ) {   }
 
-  genres = [
-    {id: 3, value: 'Genre 1'},
-    {id: 2, value: 'Genre 2'},
-    {id: 3, value: 'Genre 3'}
-  ]
+
 @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
 
@@ -38,6 +39,7 @@ export class SerieFormComponent implements OnInit {
       this.serieService.updateSerie(this.serieService.form.value);
       this.serieService.form.reset();
       this.serieService.initializeFormGroup();
+      this.notificationService.success('Submitted successfully');
     }
   }
 }

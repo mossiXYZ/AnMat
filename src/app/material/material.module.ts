@@ -14,6 +14,7 @@ import * as Material from '@angular/material';
     Material.MatFormFieldModule,
     Material.MatGridListModule,
     Material.MatSelectModule,
+    Material.MatSnackBarModule, 
 
 
   ],
@@ -26,6 +27,7 @@ import * as Material from '@angular/material';
     Material.MatFormFieldModule,
     Material.MatGridListModule,
     Material.MatSelectModule,
+    Material.MatSnackBarModule, 
 
   ]
 })

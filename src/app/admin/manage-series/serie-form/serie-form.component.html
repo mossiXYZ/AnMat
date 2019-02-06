@@ -29,8 +29,8 @@
                 <mat-form-field>
                         <mat-select formControlName="genre" placeholder="Genre(s)" multiple>
                                <!--  <mat-option>None</mat-option> -->
-                            <ng-container *ngFor="let genre of genres">
-                                <mat-option value="{{genre.value}}">{{genre.value}}</mat-option>
+                            <ng-container *ngFor="let genre of genreService.array">
+                                <mat-option value="{{genre.$key}}">{{genre.name}}</mat-option>
                             </ng-container>
                         </mat-select>
                     </mat-form-field>
