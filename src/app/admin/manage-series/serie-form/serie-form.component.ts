@@ -21,9 +21,23 @@ export class SerieFormComponent implements OnInit {
 
 
   ngOnInit() {
+    this.serieService.getSeries();
   }
+  
   onClear(){
     this.serieService.form.reset();
     this.serieService.initializeFormGroup();
+  }
+
+
+  onSubmit() {
+    if (this.serieService.form.valid) {
+      if (!this.serieService.form.get('$key').value)
+        this.serieService.insertSerie(this.serieService.form.value);
+      else
+      this.serieService.updateSerie(this.serieService.form.value);
+      this.serieService.form.reset();
+      this.serieService.initializeFormGroup();
+    }
   }
 }

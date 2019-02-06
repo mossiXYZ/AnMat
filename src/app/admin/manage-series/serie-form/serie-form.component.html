@@ -1,5 +1,5 @@
 
-<form [formGroup] = "serieService.form" class="normal-form">
+<form [formGroup] = "serieService.form" class="normal-form" (submit)="onSubmit()">
   <mat-grid-list cols="2" rowHeight="300px">
       <mat-grid-tile>
           <div class="controles-container">
@@ -30,7 +30,7 @@
                         <mat-select formControlName="genre" placeholder="Genre(s)" multiple>
                                <!--  <mat-option>None</mat-option> -->
                             <ng-container *ngFor="let genre of genres">
-                                <mat-option value="{{genre.id}}">{{genre.value}}</mat-option>
+                                <mat-option value="{{genre.value}}">{{genre.value}}</mat-option>
                             </ng-container>
                         </mat-select>
                     </mat-form-field>
