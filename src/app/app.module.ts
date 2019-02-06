@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,8 @@ import { ManageSeriesComponent } from './admin/manage-series/manage-series.compo
 import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { AuthService } from './shared/auth.service';
+import { SerieFormComponent } from './admin/manage-series/serie-form/serie-form.component';
+import { SerieService } from './shared/serie.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AuthService } from './shared/auth.service';
     HomeComponent,
     ManageSeriesComponent,
     ManageUsersComponent,
-    RegisterComponent
+    RegisterComponent,
+    SerieFormComponent,
+    
     ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { AuthService } from './shared/auth.service';
     ],
   providers: [
     AuthGuardService,
-    AuthService
+    AuthService,
+    SerieService
   ],
   bootstrap: [AppComponent]
 })
