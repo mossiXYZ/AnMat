@@ -5,6 +5,7 @@ import { GenreService } from 'src/app/shared/genre.service';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { NotificationService } from 'src/app/shared/notification.service';
 import { SerieFormComponent } from '../serie-form/serie-form.component';
+import { DialogService } from 'src/app/shared/dialog.service';
 
 @Component({
   selector: 'app-serie-list',
@@ -17,7 +18,8 @@ export class SerieListComponent implements OnInit {
   constructor(private serieService: SerieService,
               private genreService: GenreService,
               private dialog: MatDialog,
-              private notificationService: NotificationService) { }
+              private notificationService: NotificationService,
+              private dialogService: DialogService) { }
 
   
   listData: MatTableDataSource<any>;
@@ -30,7 +32,7 @@ export class SerieListComponent implements OnInit {
     this.serieService.getSeries().subscribe(
      list => {
        let array = list.map(item => {
-        // let genreName = this.genreService.getGenreName(item.payload.val()['genre']);
+       // let genreName = this.genreService.getGenreName(item.payload.val()['genre']);
          return {
            $key: item.key,
             // genreName,
@@ -79,9 +81,14 @@ export class SerieListComponent implements OnInit {
   }
 
   onDelete($key){
-    if(confirm('Are you sure to delete this record ?')){
-    this.serieService.deleteSerie($key);
-    this.notificationService.warn('! Deleted successfully');
-    }
+    this.dialogService.openConfirmDialog('Are you sure to delete this record ?')
+    .afterClosed().subscribe(res =>{
+      if(res){
+        this.serieService.deleteSerie($key);
+        this.notificationService.warn('! Deleted successfully');
+      }
+    });
   }
+
+
 }
