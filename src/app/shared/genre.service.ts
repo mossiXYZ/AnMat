@@ -31,4 +31,6 @@ export class GenreService {
       return _.find(this.array, (obj) => { return obj.$key == $key; })['name'];
     }
   }
+
+
 }

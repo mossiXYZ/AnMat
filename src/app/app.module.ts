@@ -25,6 +25,7 @@ import { AuthService } from './shared/auth.service';
 import { SerieFormComponent } from './admin/manage-series/serie-form/serie-form.component';
 import { SerieService } from './shared/serie.service';
 import { GenreService } from './shared/genre.service';
+import { SerieListComponent } from './admin/manage-series/serie-list/serie-list.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { GenreService } from './shared/genre.service';
     ManageUsersComponent,
     RegisterComponent,
     SerieFormComponent,
+    SerieListComponent,
     
     ],
   imports: [
