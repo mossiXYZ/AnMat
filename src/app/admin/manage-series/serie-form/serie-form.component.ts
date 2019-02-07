@@ -13,8 +13,8 @@ import { MatDialogRef } from '@angular/material';
 
 export class SerieFormComponent implements OnInit {
 
-  constructor(private serieService: SerieService,
-              private genreService: GenreService,
+  constructor(public serieService: SerieService,
+              public genreService: GenreService,
               private notificationService : NotificationService,
               public dialogRef: MatDialogRef<SerieFormComponent>
 

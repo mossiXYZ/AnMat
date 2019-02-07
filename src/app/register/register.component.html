@@ -27,7 +27,7 @@
                      [(ngModel)]="user.password"
                      placeholder="Enter your password"
                      [type]="hide ? 'password':'text'" />
-                <mat-icon matSuffix (click)="hide = !hide">
+                <mat-icon matSuffix (click)="onHide()">
                   {{hide ? 'visibility' : 'visibility_off'}}
                 </mat-icon>
             </mat-form-field>

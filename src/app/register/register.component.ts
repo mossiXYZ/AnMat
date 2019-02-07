@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
 
   user: RegisterModel = new RegisterModel();
   registerForm : FormGroup;
-
+  hide: boolean;
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit() {
@@ -32,4 +32,9 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  onHide(){
+    this.hide = !this.hide
+  }
+
+  onRegisterSubmit(){}
 }

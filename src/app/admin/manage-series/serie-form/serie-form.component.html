@@ -38,7 +38,7 @@
                         <mat-select formControlName="genre" placeholder="Genre(s)" multiple>
                                <!--  <mat-option>None</mat-option> -->
                             <ng-container *ngFor="let genre of genreService.array">
-                                <mat-option value="{{genre.$key}}">{{genre.name}}</mat-option>
+                                <mat-option value="{{genre.name}}">{{genre.name}}</mat-option>
                             </ng-container>
                         </mat-select>
                     </mat-form-field>
