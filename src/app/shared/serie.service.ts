@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms"
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -62,5 +63,7 @@ export class SerieService {
   deleteSerie($key: string){
     this.serieList.remove($key); 
   }
-
+  populateForm(serie) {
+    this.form.setValue(_.omit(serie,'genre.name'));
+  }
 }

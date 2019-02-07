@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { SerieService } from 'src/app/shared/serie.service';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { GenreService } from 'src/app/shared/genre.service';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { NotificationService } from 'src/app/shared/notification.service';
+import { SerieFormComponent } from '../serie-form/serie-form.component';
 
 @Component({
   selector: 'app-serie-list',
@@ -9,14 +12,16 @@ import { GenreService } from 'src/app/shared/genre.service';
   styleUrls: ['./serie-list.component.css']
 })
 export class SerieListComponent implements OnInit {
-
+  
 
   constructor(private serieService: SerieService,
-              private genreService: GenreService) { }
+              private genreService: GenreService,
+              private dialog: MatDialog,
+              private notificationService: NotificationService) { }
 
   
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['title', 'year', 'summary','imageUrl', 'actions'];
+  displayedColumns: string[] = ['title', 'year', 'summary','genre','imageUrl', 'actions'];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   searchKey: string;
@@ -54,4 +59,29 @@ export class SerieListComponent implements OnInit {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
+
+  onCreate() {
+    this.serieService.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(SerieFormComponent,dialogConfig);
+  }
+
+  onEdit(row){
+    this.serieService.populateForm(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(SerieFormComponent,dialogConfig);
+  }
+
+  onDelete($key){
+    if(confirm('Are you sure to delete this record ?')){
+    this.serieService.deleteSerie($key);
+    this.notificationService.warn('! Deleted successfully');
+    }
+  }
 }

@@ -59,6 +59,7 @@ import { SerieListComponent } from './admin/manage-series/serie-list/serie-list.
     SerieService,
     GenreService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[SerieFormComponent]
 })
 export class AppModule { }

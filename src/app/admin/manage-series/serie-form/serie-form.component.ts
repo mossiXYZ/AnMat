@@ -3,6 +3,7 @@ import { SerieService } from 'src/app/shared/serie.service';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import { GenreService } from 'src/app/shared/genre.service';
 import { NotificationService } from 'src/app/shared/notification.service';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-serie-form',
@@ -15,6 +16,8 @@ export class SerieFormComponent implements OnInit {
   constructor(private serieService: SerieService,
               private genreService: GenreService,
               private notificationService : NotificationService,
+              public dialogRef: MatDialogRef<SerieFormComponent>
+
               ) {   }
 
 
@@ -40,6 +43,14 @@ export class SerieFormComponent implements OnInit {
       this.serieService.form.reset();
       this.serieService.initializeFormGroup();
       this.notificationService.success('Submitted successfully');
+      this.onClose();
     }
+  }
+
+
+  onClose() {
+    this.serieService.form.reset();
+    this.serieService.initializeFormGroup();
+    this.dialogRef.close();
   }
 }

@@ -17,7 +17,8 @@ import * as Material from '@angular/material';
     Material.MatSnackBarModule, 
     Material.MatTableModule,
     Material.MatSortModule,
-    Material.MatPaginatorModule
+    Material.MatPaginatorModule,
+    Material.MatDialogModule
 
   ],
   exports : [
@@ -32,7 +33,8 @@ import * as Material from '@angular/material';
     Material.MatSnackBarModule, 
     Material.MatTableModule,
     Material.MatSortModule,
-    Material.MatPaginatorModule
+    Material.MatPaginatorModule,
+    Material.MatDialogModule
   ]
 })
 export class MaterialModule { }

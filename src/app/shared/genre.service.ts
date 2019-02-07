@@ -24,13 +24,13 @@ export class GenreService {
   }
 
 
-  getGenreName($key) {
-    if ($key == "0")
-      return "";
-    else{
-      return _.find(this.array, (obj) => { return obj.$key == $key; })['name'];
-    }
-  }
+  // getGenreName($key) {
+  //   if ($key == "0")
+  //     return "";
+  //   else{
+  //     return _.find(this.array, (obj) => { return obj.$key == $key; })['name'];
+  //   }
+  // }
 
 
 }
