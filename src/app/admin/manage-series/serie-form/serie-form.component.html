@@ -5,16 +5,21 @@
         <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
 </mat-toolbar>
 
-
-
+<!-- we have the form element and we are going to design this from using the SerieService  property "from" which is the type of formGroup
+  [formGroup] is an attribute, here for using ReactiveFormsModule we to import it to AppModule.
+Use and add MatGridListModule -->
 <form [formGroup] = "serieService.form" class="normal-form" (submit)="onSubmit()">
-  <mat-grid-list cols="2" rowHeight="300px">
-      <mat-grid-tile>
+  <mat-grid-list cols="4" rowHeight="430px">
+      <mat-grid-tile [colspan]="3">
           <div class="controles-container">
-          
+              <!-- $key for serie, each form is for one serie-->
               <input type="hidden" formControlName="$key"> 
   
               <mat-form-field>
+                  <!-- in order to convert this normal input element into a matInput we have to add "matInput" directive.
+                       we must add MatFormFieldModule & MatInputModule also. 
+                       we must add BrowserAnimationModule in to AppModule also for displaying from correctly.
+                       mat-error is already defien in  MatFormFieldModule-->
                  <input formControlName="title" matInput placeholder="Title*">
                  <mat-error>This field is required!</mat-error>
               </mat-form-field>
@@ -27,43 +32,90 @@
                <mat-form-field>
                     <input matInput formControlName="imageUrl"  placeholder="Image Url">
                  </mat-form-field>
-             
-            </div>
+
+              <mat-form-field>
+                      <mat-select formControlName="genre" placeholder="Genre(s)" multiple>
+                             <!--  <mat-option>None</mat-option> -->
+                          <ng-container *ngFor="let genre of genreService.array">
+                              <mat-option value="{{genre.name}}">{{genre.name}}</mat-option>
+                          </ng-container>
+                      </mat-select>
+                  </mat-form-field>
+
+
+              <mat-form-field>
+                      <textarea matInput
+                                cdkTextareaAutosize
+                                #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="2"
+                                cdkAutosizeMaxRows="3"
+                                formControlName="summary"
+                                placeholder="Summary"></textarea>
+              </mat-form-field>
+
+              <div class= button-row>
+                      <button mat-raised-button color="basic" type = "submit" [disabled]="serieService.form.invalid">Submit</button>
+                      <button mat-raised-button color="warn" (click)= "onClear()">Clear</button>
+                </div>
+        </div>
+
       </mat-grid-tile>
 
-      <mat-grid-tile>
-          <div class="controles-container">
+      <mat-grid-tile [colspan]="1">
 
-                <mat-form-field>
-                        <mat-select formControlName="genre" placeholder="Genre(s)" multiple>
-                               <!--  <mat-option>None</mat-option> -->
-                            <ng-container *ngFor="let genre of genreService.array">
-                                <mat-option value="{{genre.name}}">{{genre.name}}</mat-option>
-                            </ng-container>
-                        </mat-select>
-                    </mat-form-field>
+          <mat-card class="example-card">
+            <mat-card-header>
+            <!--  <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>{{title}}</mat-card-title>
+              <mat-card-subtitle>{{year}}   ({{genre}})</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src={{imgUrl}} alt="Photo of a Shiba Inu">
+            <mat-card-content  >
+              <p>
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
 
+                <mat-grid-list cols="6" rowHeight="50px">
 
-                <mat-form-field>
-                        <textarea matInput
-                                  cdkTextareaAutosize
-                                  #autosize="cdkTextareaAutosize"
-                                  cdkAutosizeMinRows="2"
-                                  cdkAutosizeMaxRows="3"
-                                  formControlName="summary"
-                                  placeholder="Summary"></textarea>
-                </mat-form-field>
+                    <mat-grid-tile>                
+                      <div >
+                        <mat-icon>thumb_up_alt</mat-icon>
+                        <mat-card-subtitle>230</mat-card-subtitle>
+                      </div>
+                    </mat-grid-tile>
 
-                <div class= button-row>
-                        <button mat-raised-button color="basic" type = "submit" [disabled]="serieService.form.invalid">Submit</button>
-                        <button mat-raised-button color="warn" (click)= "onClear()">Clear</button>
-                  </div>
-          </div>
+                    <mat-grid-tile>                
+                        <div >
+                          <mat-icon>thumb_down_alt</mat-icon>
+                          <mat-card-subtitle>34</mat-card-subtitle>
+                        </div>
+                      </mat-grid-tile>
 
+                      <mat-grid-tile>                
+                        </mat-grid-tile>
 
-        
+                        <mat-grid-tile>                
+                          </mat-grid-tile>
+
+                          <mat-grid-tile>                
+                            </mat-grid-tile>
+                            
+                        <mat-grid-tile>                
+                            <div >
+                              <mat-icon>visibility</mat-icon>
+                              <mat-card-subtitle>2399</mat-card-subtitle>
+                            </div>
+                          </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-actions>
+          </mat-card>
+
       </mat-grid-tile>
 
   </mat-grid-list>
 
 </form>
+
+

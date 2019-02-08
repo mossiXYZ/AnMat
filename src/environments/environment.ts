@@ -2,6 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+//inside this constant environement  we add one more property, it will be "firebaseConfig", 
+///we add connection details that we have copied from firebase console
+//and then we add this environment constant in to appModule
+//go to appModule and add it to "imports" => AngularFireModule.initializeApp(environment.firebaseConfig),
 export const environment = {
   production: false,
   firebaseConfig : {

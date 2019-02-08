@@ -27,6 +27,8 @@ import { SerieService } from './shared/serie.service';
 import { GenreService } from './shared/genre.service';
 import { SerieListComponent } from './admin/manage-series/serie-list/serie-list.component';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { SeriesComponent } from './series/series.component';
+import { SerieComponent } from './series/serie/serie.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     SerieFormComponent,
     SerieListComponent,
     MatConfirmDialogComponent,
+    SeriesComponent,
+    SerieComponent,
     
     ],
   imports: [

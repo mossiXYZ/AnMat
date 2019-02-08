@@ -72,11 +72,14 @@ export class SerieListComponent implements OnInit {
   }
 
   onEdit(row){
+
     this.serieService.populateForm(row);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "60%";
+    dialogConfig.width = "80%";
+    dialogConfig.height = "80%";
+
     this.dialog.open(SerieFormComponent,dialogConfig);
   }
 
