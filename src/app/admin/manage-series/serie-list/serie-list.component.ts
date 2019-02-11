@@ -23,7 +23,7 @@ export class SerieListComponent implements OnInit {
 
   
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['title', 'year', 'summary','genre','imageUrl', 'actions'];
+  displayedColumns: string[] = ['title', 'year', 'genre','summary','imageUrl', 'actions'];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   searchKey: string;
@@ -72,7 +72,6 @@ export class SerieListComponent implements OnInit {
   }
 
   onEdit(row){
-
     this.serieService.populateForm(row);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;

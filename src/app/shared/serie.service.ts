@@ -49,6 +49,8 @@ export class SerieService {
 // in order to insert a new record we can do this, we will call "push" fonction from the "AngularFireList" object serieList
 //inside that we just need to passe an "object"  containing details of new Serie
 //when we insert a new recorde in to firebaseDB collection it will create automatically  a primaryKey($key)
+//in order to call(evoke) push fonction we must already initialize "serieList" property, we did it in fonction getSeries(), 
+//now before any CRUD just we must call getSeries() in  ngOnInit() life cycle hook in SerieForm component
   insertSerie(serie){ 
     this.serieList.push({
     title: serie.title,

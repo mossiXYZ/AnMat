@@ -19,18 +19,17 @@ export class SerieFormComponent implements OnInit {
               private notificationService : NotificationService,
               public dialogRef: MatDialogRef<SerieFormComponent>
 
-              ) {  }
+              ) { }
 
-title =  this.serieService.form.get('title').value;
-genre = this.serieService.form.get('genre').value;
-year = this.serieService.form.get('year').value;
-imgUrl = this.serieService.form.get('imageUrl').value;
+
+serie = this.serieService.form.value;
 
 @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
 
   ngOnInit() {
     this.serieService.getSeries();
+    
   }
  
   
