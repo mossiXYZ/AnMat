@@ -13,7 +13,7 @@ import { MatDialogRef } from '@angular/material';
 export class SerieFormComponent implements OnInit {
 
 //first one after we injected SerieService in to App.Module, we have to create an Object of the SerieService  inside the constructor
-
+//for submition of dialog form we must add  MatDialogRef from AngularMaterial, 
   constructor(public serieService: SerieService,
               public genreService: GenreService,
               private notificationService : NotificationService,

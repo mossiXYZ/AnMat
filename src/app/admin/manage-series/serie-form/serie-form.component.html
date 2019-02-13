@@ -60,7 +60,7 @@ Use and add MatGridListModule -->
         </div>
 
       </mat-grid-tile>
-      <ng-container *ngIf="this.serie.$key">
+      <ng-container *ngIf="this.serie.$key"> <!-- this.serie.$key or serieService.form.controls['$key'].value-->
         <mat-grid-tile [colspan]="1">
 
             <mat-card class="example-card">

@@ -66,6 +66,7 @@ import { SerieComponent } from './series/serie/serie.component';
     GenreService
   ],
   bootstrap: [AppComponent],
+// in order to open a component in a dialog window(in serieListComponent for example), we have to add that comopenent in appModule.ts 
   entryComponents:[SerieFormComponent, MatConfirmDialogComponent]
 })
 export class AppModule { }
