@@ -1,0 +1,18 @@
+Mosh Auth+
+Angular Material + Firebase CRUD 
+
+Series App
+-------------------------------------
+
+commit 0efa3715adfa93e1d6b13cb9e6f1ed4dcdb9208c (HEAD -> master,
+origin/master)
+Author: mossi <mossi.hashemi@gmail.com>
+Date:   Wed Feb 13 10:24:22 2019 +0100
+
+    add some comments
+
+commit e19bf9e6728ca86198d8edd3b93cac8a616a4cee
+Author: mossi <mossi.hashemi@gmail.com>
+Date:   Mon Feb 11 21:56:39 2019 +0100
+
+    improving serie form
