@@ -1,3 +1,172 @@
-<p>
-  home works!
-</p>
+
+
+<div >
+  <h1>Nouveauté :</h1>
+</div>
+<mat-grid-list cols="3" rowHeight="600px">
+  <mat-grid-tile
+      *ngFor="let serie of newSeries ">
+      <mat-card class="example-card">
+        <mat-card-header>
+        <!--  <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{serie.title}}</mat-card-title>
+          <mat-card-subtitle>{{serie.year}}   ({{serie.genre}})</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{serie.imageUrl}} alt="Photo of {{serie.title}}">
+        <mat-card-content  >
+        </mat-card-content>
+        <mat-card-actions>
+
+            <mat-grid-list cols="6" rowHeight="50px">
+
+                <mat-grid-tile>                
+                  <div >
+                    <mat-icon>thumb_up_alt</mat-icon>
+                    <mat-card-subtitle>230</mat-card-subtitle>
+                  </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>                
+                    <div >
+                      <mat-icon>thumb_down_alt</mat-icon>
+                      <mat-card-subtitle>34</mat-card-subtitle>
+                    </div>
+                  </mat-grid-tile>
+
+                  <mat-grid-tile>                
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>                
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>                
+                        </mat-grid-tile>
+                        
+                    <mat-grid-tile>                
+                        <div >
+                          <mat-icon>visibility</mat-icon>
+                          <mat-card-subtitle>2399</mat-card-subtitle>
+                        </div>
+                      </mat-grid-tile>
+
+            </mat-grid-list>
+          </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<br><br>
+<hr>
+
+<div >
+  <h1>Recommandation :</h1>
+</div>
+
+<mat-grid-list cols="3" rowHeight="600px">
+  <mat-grid-tile
+      *ngFor="let serie of recommandations ">
+      <mat-card class="example-card">
+        <mat-card-header>
+        <!--  <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{serie.title}}</mat-card-title>
+          <mat-card-subtitle>{{serie.year}}   ({{serie.genre}})</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{serie.imageUrl}} alt="Photo of {{serie.title}}">
+        <mat-card-content  >
+        </mat-card-content>
+        <mat-card-actions>
+
+            <mat-grid-list cols="6" rowHeight="50px">
+
+                <mat-grid-tile>                
+                  <div >
+                    <mat-icon>thumb_up_alt</mat-icon>
+                    <mat-card-subtitle>230</mat-card-subtitle>
+                  </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>                
+                    <div >
+                      <mat-icon>thumb_down_alt</mat-icon>
+                      <mat-card-subtitle>34</mat-card-subtitle>
+                    </div>
+                  </mat-grid-tile>
+
+                  <mat-grid-tile>                
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>                
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>                
+                        </mat-grid-tile>
+                        
+                    <mat-grid-tile>                
+                        <div >
+                          <mat-icon>visibility</mat-icon>
+                          <mat-card-subtitle>2399</mat-card-subtitle>
+                        </div>
+                      </mat-grid-tile>
+
+            </mat-grid-list>
+          </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<hr>
+<div >
+  <h1>All Series :</h1>
+</div>
+
+<mat-grid-list cols="3" rowHeight="700px">
+  <mat-grid-tile
+      *ngFor="let serie of allSeries ">
+      <mat-card class="example-card">
+        <mat-card-header>
+        <!--  <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{serie.title}}</mat-card-title>
+          <mat-card-subtitle>{{serie.year}}   ({{serie.genre}})</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{serie.imageUrl}} alt="Photo of {{serie.title}}">
+        <mat-card-content  >
+        </mat-card-content>
+        <mat-card-actions>
+
+            <mat-grid-list cols="6" rowHeight="50px">
+
+                <mat-grid-tile>                
+                  <div >
+                    <mat-icon>thumb_up_alt</mat-icon>
+                    <mat-card-subtitle>230</mat-card-subtitle>
+                  </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>                
+                    <div >
+                      <mat-icon>thumb_down_alt</mat-icon>
+                      <mat-card-subtitle>34</mat-card-subtitle>
+                    </div>
+                  </mat-grid-tile>
+
+                  <mat-grid-tile>                
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>                
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>                
+                        </mat-grid-tile>
+                        
+                    <mat-grid-tile>                
+                        <div >
+                          <mat-icon>visibility</mat-icon>
+                          <mat-card-subtitle>2399</mat-card-subtitle>
+                        </div>
+                      </mat-grid-tile>
+
+            </mat-grid-list>
+          </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

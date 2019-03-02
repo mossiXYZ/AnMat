@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 600px;
+    zoom: 90%;
+
+  }
+  .example-card >img {
+    width: auto;
+    height: auto;
+  }
